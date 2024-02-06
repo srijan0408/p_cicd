@@ -3,8 +3,10 @@ const path = require('path');
 
 const app = express();
 
+// Serve static files
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.get('/', (req, res) => {
-    // Use path.join to concatenate __dirname and 'public'
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
